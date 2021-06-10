@@ -18,6 +18,12 @@ public class PlayersController {
         return playersRepository.findById(id);
     }
 
+    //get team by Manager name
+    @GetMapping(path = "/players/{manager}")
+    Players getPlayers(@PathVariable String manager){
+        return playersRepository.findByManager(manager);
+    }
+
     //post player
     @PostMapping(path = "/players")
     String postPlayers(@RequestBody Players player){
