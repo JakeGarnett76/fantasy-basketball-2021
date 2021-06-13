@@ -48,4 +48,11 @@ public class Players {
         return manager;
     }
 
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    }
+
 }

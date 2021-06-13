@@ -34,4 +34,18 @@ public class PlayersController {
         return success;
     }
 
+    //Update a player by id
+    @PutMapping(path = "/players/{id}")
+    Players updatePlayers(@PathVariable int id, @RequestBody Players request){
+        Players player = playersRepository.findById(id);
+        if(player == null){
+            return null;
+        }
+        player.setTeam(request.getPlayerTeam());
+        player.setName(request.getName());
+        player.setManager(request.getManager());
+        player.setPlayerId(request.getPlayerId());
+        return playersRepository.findById(id);
+    }
+
 }
