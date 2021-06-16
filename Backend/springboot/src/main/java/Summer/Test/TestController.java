@@ -1,4 +1,4 @@
-package Summer;
+package Summer.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

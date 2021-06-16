@@ -1,4 +1,4 @@
-package Summer;
+package Summer.Test;
 
 
 import javax.persistence.Entity;

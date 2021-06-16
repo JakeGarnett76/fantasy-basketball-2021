@@ -1,4 +1,4 @@
-package Teams;
+package Summer.Teams;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
