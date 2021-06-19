@@ -12,7 +12,6 @@ public class TestController {
         private String success = "{\"message\":\"success\"}";
         private String failure = "{\"message\":\"failure\"}";
 
-
         //get Entry by Id
         @GetMapping(path = "/entry/{id}")
         Test getEntryById(@PathVariable int id){

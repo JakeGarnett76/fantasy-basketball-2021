@@ -3,14 +3,22 @@ package Summer.Teams;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-public class PlayersController {
+public class PlayersController{
 
     @Autowired
     PlayersRepository playersRepository;
 
     private String success = "{\"message\":\"success\"}";
     private String failure = "{\"message\":\"failure\"}";
+
+    //get all Players
+    @GetMapping(path = "/players")
+    List<Players> getPlayers(){
+        return playersRepository.findAll();
+    }
 
     //get Player by Id
     @GetMapping(path = "/players/{id}")
