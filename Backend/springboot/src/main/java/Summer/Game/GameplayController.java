@@ -30,5 +30,23 @@ public class GameplayController {
         return gameplayRepository.findById(id);
     }
 
+    //get home score by id
+    @GetMapping(path = "/score/home/{id}")
+    Gameplay getHomeScore(@PathVariable int id){
+        return gameplayRepository.findById(id);
+    }
+
+    //get away score by id
+    @GetMapping(path = "/score/away/{id}")
+    Gameplay getAwayScore(@PathVariable int id){
+        return gameplayRepository.findById(id);
+    }
+
+    //get playerscore by id
+    @GetMapping(path = "/score/player/{id}")
+    Gameplay getPlayerScore(@PathVariable int id){
+        return gameplayRepository.findById(id);
+    }
+
 
 }

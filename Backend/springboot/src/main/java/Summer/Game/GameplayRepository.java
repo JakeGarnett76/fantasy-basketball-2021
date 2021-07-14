@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface GameplayRepository extends JpaRepository<Gameplay, Long> {
 
-    Players findById(int id);
-//    Players findByEntry(String Entry);
-    Players findByManager(String manager);
+    Gameplay findById(int id);
+//    Gameplay findByEntry(String Entry);
+    Gameplay findByManager(String manager);
 }
