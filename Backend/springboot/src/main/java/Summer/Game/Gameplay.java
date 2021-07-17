@@ -1,7 +1,9 @@
 package Summer.Game;
 
 import org.springframework.data.annotation.Id;
+import javax.persistence.Entity;
 
+@Entity
 public class Gameplay {
 
     @Id
@@ -22,8 +24,8 @@ public class Gameplay {
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
 
-        this.homeScore = homeScore;
-        this.awayScore = awayScore;
+        this.homeScore = 0;
+        this.awayScore = 0;
     }
 
     public void setGameplayId(int id){
