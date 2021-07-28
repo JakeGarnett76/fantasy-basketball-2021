@@ -48,16 +48,16 @@ public class GameplayController {
 
     //Update Game status by id
     @PutMapping(path = "/score/{id}")
-    Players updatePlayers(@PathVariable int id, @RequestBody Gameplay request){
+    Gameplay updatePlayers(@PathVariable int id, @RequestBody Gameplay request){
         Gameplay game = gameplayRepository.findById(id);
         if(game == null){
             return null;
         }
         game.setGameplayId(request.getGameplayId());
-        game.setAwayScore(request);
-        game.setAwayTeam();
-        game.setHomeScore();
-        game.setHomeTeam();
+        game.setAwayScore(request.getAwayScore());
+        game.setAwayTeam(request.getAwayTeam());
+        game.setHomeScore(request.getHomeScore());
+        game.setHomeTeam(request.getHomeTeam());
         return gameplayRepository.findById(id);
     }
 
