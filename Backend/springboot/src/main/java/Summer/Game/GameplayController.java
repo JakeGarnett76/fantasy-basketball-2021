@@ -1,10 +1,9 @@
 package Summer.Game;
 
 
+import Summer.Teams.Players;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -44,6 +43,21 @@ public class GameplayController {
     //get playerscore by id
     @GetMapping(path = "/score/player/{id}")
     Gameplay getPlayerScore(@PathVariable int id){
+        return gameplayRepository.findById(id);
+    }
+
+    //Update Game status by id
+    @PutMapping(path = "/score/{id}")
+    Players updatePlayers(@PathVariable int id, @RequestBody Gameplay request){
+        Gameplay game = gameplayRepository.findById(id);
+        if(game == null){
+            return null;
+        }
+        game.setGameplayId(request.getGameplayId());
+        game.setAwayScore(request);
+        game.setAwayTeam();
+        game.setHomeScore();
+        game.setHomeTeam();
         return gameplayRepository.findById(id);
     }
 
